@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 
 import { MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
 
+import { HashLocationStrategy,LocationStrategy } from '@angular/common';
+
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'broker.emqx.io',
   port: 8083,
@@ -36,7 +38,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     BrowserAnimationsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass : HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
