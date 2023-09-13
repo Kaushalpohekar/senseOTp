@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<section class="dashboard">
+	<div class="container-fluid">
+		<div class="row pt-2">
+			<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 mb-3">
+				<mat-card style="height: 100%;">
+					<mat-card-header class="header">
+						<div class="col-12 d-flex mb-2">
+						<div class="device-title">Device Name</div>
+							<div class="ms-auto device-title" *ngIf="isButtonDisabled">{{ countdown }}s</div>
+						</div>
+					</mat-card-header>
+					<mat-card-content class="pt-4">
+						<div class="container-fluid">
+						  <div class="row pt-2">
+						    <div class="col-12 d-flex justify-content-center flex-column mb-2">
+						    	<div *ngIf="isButtonDisabled" class="mb-3">Do not share this otp with Anyone...</div>
+						    <!-- Added flex-column -->
+						    	<div class="otp mb-3">{{generatedOTP}}</div>
+						    	<button mat-raised-button color="primary" (click)="generateRandomOTP()" [disabled]="isButtonDisabled">Generate OTP</button>
+						    </div>
+						  </div>
+						</div>
+
+						
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</section>
+
+<app-footer></app-footer>

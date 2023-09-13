@@ -1,0 +1,27 @@
+.dashboard{
+  padding-top: 12vh;
+  padding-bottom: 5vh;
+}
+
+@media (min-width: 576px) and (max-width:979px){
+  .dashboard{
+    padding-top: 17vh;
+  }
+}
+
+.device-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header {
+  background-color: whitesmoke;
+}
+
+.otp{
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
