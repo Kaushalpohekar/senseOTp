@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 
 import { MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
 
+import { HashLocationStrategy,LocationStrategy } from '@angular/common';
+
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'a148u5sq3d9wyr-ats.iot.ap-south-1.amazonaws.com',
   port: 443,
@@ -36,7 +38,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     BrowserAnimationsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass : HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
