@@ -16,11 +16,14 @@ import { MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
 import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: 'a148u5sq3d9wyr-ats.iot.ap-south-1.amazonaws.com',
-  port: 443,
-  protocol: 'wss',
-  path: '/',
+  hostname: 'broker.emqx.io',
+  port: 8083,
+  protocol: 'ws',
+  path: '/mqtt',
+  username: 'Kaushal',
+  password: 'Sense@123'
 };
+
 
 
 @NgModule({

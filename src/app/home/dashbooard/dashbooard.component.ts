@@ -41,12 +41,15 @@ export class DashbooardComponent implements OnInit, OnDestroy {
     }, 1000); // Update countdown every second
 
     const topic = 'otp/sense/SLOTP001'; // Replace this with your desired topic
-    const payload = this.generatedOTP;
+    const otpData = { otp: this.generatedOTP }; // Create an object with the OTP
     
     try {
+      // Convert the object to JSON format before publishing
+      const payload = JSON.stringify(otpData);
+
       this.mqttService.publish(topic, payload).subscribe({
         next: () => {
-          console.log('OTP sended tto the Device:', payload);
+          console.log('OTP sent to the Device:', payload);
         },
         error: (error) => {
           console.error("Error occurred while publishing:", error);
@@ -56,6 +59,7 @@ export class DashbooardComponent implements OnInit, OnDestroy {
       console.error("Error occurred while publishing:", error);
     }
   }
+
 
   ngOnDestroy() {
     // Clear the timer when the component is destroyed to prevent memory leaks
