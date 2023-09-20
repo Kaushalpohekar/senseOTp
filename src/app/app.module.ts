@@ -14,10 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
 
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: 'broker.emqx.io',
-  port: 8083,
-  protocol: 'ws',
-  path: '/mqtt',
+  hostname: 'a148u5sq3d9wyr-ats.iot.ap-south-1.amazonaws.com',
+  port: 443,
+  protocol: 'wss',
+  path: '/',
 };
 
 
